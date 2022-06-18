@@ -79,9 +79,9 @@ def request_to_site(url):
     print(list_job)
 
 
-def search():
+def search(job):
     url = 'https://boston.craigslist.org/search/jjj?query='
-    job = text.get()
+    job = job.get()
     '''action.configure(text="I have been clicked!")
     a_lable.configure(foreground='red')
     a_lable.configure(text='A red Label')'''
@@ -98,13 +98,13 @@ def search():
 a_lable = ttk.Label(win, text="A Lable")
 a_lable.grid(column=0, row=0)
 
-action = ttk.Button(win, text="Click to search", command=search)
+action = ttk.Button(win, text="Click to search", command=lambda :search(text))
 action.grid(column=0, row=2,ipadx=30, ipady=10)
 
 '''action1 = ttk.Button(win, text="Clear Results", command=search)
 action1.grid(column=1, row=2)'''
 
-name = tk.StringVar()
+text = tk.StringVar()
 name_entered = ttk.Entry(win, width=12, textvariable=text)
 name_entered.insert(0, "Some Menu for Job title Selection(for exapmle: A Drop Menu")
 name_entered.grid(column = 0, row = 1,padx=10, pady=10, ipadx=200, ipady=10,columnspan=2)
